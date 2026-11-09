@@ -1,0 +1,7 @@
+title: Guilherme Victaliano — AI Builder
+description: Agentes de IA, automações e ferramentas internas que resolvem problemas reais de operação.
+url: https://guilhermevictaliano.github.io
+permalink: /notas/:year/:title/
+exclude:
+  - README.md
+  - _templates

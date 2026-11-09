@@ -1,0 +1,25 @@
+<!doctype html>
+<html lang="{% if page.lang == 'en' %}en{% else %}pt-BR{% endif %}">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>{{ page.title }} — Guilherme Victaliano</title>
+<meta name="description" content="{{ page.excerpt | strip_html | truncate: 160 }}">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,600&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="{{ '/assets/style.css' | relative_url }}">
+</head>
+<body>
+<header class="top"><a class="brand" href="{{ '/' | relative_url }}">GV</a>
+  <nav><a href="{{ '/#notas' | relative_url }}">{% if page.lang == 'en' %}← All notes{% else %}← Todas as notas{% endif %}</a></nav>
+</header>
+<main>
+  <article class="post">
+    <h1>{{ page.title }}</h1>
+    <p class="date">{{ page.date | date: "%d/%m/%Y" }}{% if page.translation %} · <a href="{{ page.translation | relative_url }}">{% if page.lang == 'en' %}Leia em português{% else %}Read in English{% endif %}</a>{% endif %}</p>
+    {{ content }}
+  </article>
+</main>
+<footer><p>Guilherme Victaliano · <a href="https://www.linkedin.com/in/guilherme-victaliano-de-meira-b73933343/">LinkedIn</a> · <a href="https://github.com/GuilhermeVictaliano">GitHub</a></p></footer>
+</body>
+</html>
